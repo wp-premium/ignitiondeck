@@ -1,0 +1,381 @@
+/* * Admin Forms * */
+
+.ignitiondeck form .form-row {
+  width: 99%;
+  margin: 0 0 15px 0;
+  vertical-align: top; }
+.ignitiondeck form .form-row.half {
+  width: 49.5%;
+  display: inline-block; }
+.ignitiondeck form .form-row.quarter {
+  width: 24.5%;
+  display: inline-block; }
+.ignitiondeck form .form-row.third {
+  width: 32.5%;
+  display: inline-block; }
+.ignitiondeck form .form-row.twothird {
+  width: 65%;
+  display: inline-block; }
+.ignitiondeck form .form-row.date {
+  width: auto;
+  padding-left: 1%; }
+.ignitiondeck form .form-row.date input {
+  width: auto;
+  display: inline-block;
+  padding-right: 5px; }
+.ignitiondeck form .form-row label {
+  color: #434f60;
+  display: block;
+  font: 0.66667;
+  font-weight: 200;
+  text-indent: 3px;
+  vertical-align: text-bottom; }
+.ignitiondeck form .form-row label span {
+  float: right;
+  margin-top: -8px; }
+.ignitiondeck form .form-row input, .ignitiondeck form .form-row textarea {
+  font-size: 19px;
+  line-height: 21px;
+  padding: 8px;
+  height: inherit;
+  color: #627fa7;
+  display: block;
+  border: 1px solid rgba(98, 127, 167, 0.7);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */ }
+.ignitiondeck form .form-row textarea.description {
+    height: 172px; }
+
+/* * Admin Layout * */
+
+.ignitiondeck p.error, .ignitiondeck p.success {
+  background-color: #fff;
+  width: 100%;
+  font-size: 21px;
+  line-height: 24px;
+  text-align: left;
+  margin: 0 auto 10px auto;
+  display: block;
+  padding: 16px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+   }
+.ignitiondeck p.error {
+  color: #D0011B;
+  border: 1px solid #FF7372; }
+.ignitiondeck p.success {
+  color: #417505;
+  border: 1px solid #7ED221; }
+
+.ignitiondeck .widefat {
+  border: 1px solid #C8D3DC;
+}
+
+.ignitiondeck .widefat thead tr th, .ignitiondeck .postbox h3, .ignitiondeck .widefat tfoot tr th {
+  background: rgba(240,241,246,1); 
+  border-bottom: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: #434F60;
+  line-height: 22px;
+  cursor: default !important;
+}
+
+.ignitiondeck .postbox.info h3 {
+  background: #EBECF3;
+  border-bottom: 1px solid #DFE1E7;
+  -moz-box-shadow: 0 0 0;
+  -webkit-box-shadow: 0 0 0;
+  box-shadow: 0 0 0;
+}
+
+.ignitiondeck .widefat thead tr th a {
+  color: #434F60;
+}
+.ignitiondeck .widefat thead tr {
+  height: 32px;
+}
+.ignitiondeck .widefat .hentry {
+  color: #898E97;
+  background: #F8F9FB;
+}
+.ignitiondeck .widefat .hentry td, .ignitiondeck .widefat .hentry th, .ignitiondeck .widefat .form-input td {
+  padding: 15px 0 15px 5px;
+  color: #898E97;
+}
+.ignitiondeck .widefat .form-input th {
+  padding: 19px 0 11px 0;
+  color: #898E97;
+}
+.ignitiondeck .widefat .hentry.alternate {
+  background: #ffffff;
+}
+.ignitiondeck .widefat .hentry td, .ignitiondeck .widefat .hentry th {
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  transition: all 100ms linear;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.ignitiondeck .widefat tr.hentry:hover td, .ignitiondeck .widefat tr.hentry:hover th {
+  border-top: 1px solid #B14040;
+  border-bottom: 1px solid #B14040;
+}
+.ignitiondeck .widefat tr.hentry td:last-of-type {
+  border-right: 1px solid transparent;
+}
+.ignitiondeck .widefat tr.hentry th {
+  border-left: 1px solid transparent;
+}
+.ignitiondeck .widefat tr.hentry:hover td:last-of-type {
+  border-right: 1px solid #B14040;
+}
+.ignitiondeck .widefat tr.hentry:hover th {
+  border-left: 1px solid #B14040;
+}
+.ignitiondeck .hentry .user-email a {
+  color: #898E97;
+  cursor: default;
+}
+.ignitiondeck .widefat .name-title a {
+  color: #282808;
+}
+.ignitiondeck .widefat .name-title:hover a, .ignitiondeck .widefat .name-title:hover, .ignitiondeck .widefat .current-levels:hover {
+  color: #B14040;
+  cursor: pointer;
+}
+.ignitiondeck .md-settings-container {
+  max-width: 960px;
+}
+.ignitiondeck .inline {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.ignitiondeck .postbox {
+  color: #434F60;
+  background-color: #F8F9FB;
+  background-image: none;
+}
+.ignitiondeck .postbox:hover {
+  background-color: #FAFCFC;
+}
+.ignitiondeck .postbox.info {
+  background: #DFE1E7 !important;
+  border: none;
+  padding-bottom: 5px;
+}
+.ignitiondeck .inside {
+  padding: 0 15px;
+  margin-top: 10px !important;
+}
+.ignitiondeck .inside.info {
+  background: #DFE1E7 !important;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px !important;
+}
+.ignitiondeck .inside h4 {
+  padding: 0;
+  line-height: 1em;
+  margin: 10px 0;
+  font-size: 110%;
+}
+.ignitiondeck .md_help_link {
+  height: 18px;
+  width: 18px;
+  display: block;
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  text-indent: 100%;
+  overflow: hidden;
+  cursor: help;
+}
+.ignitiondeck .md_help_link {
+  background-image: url(../images/help-icon.png);
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  opacity: .5;
+}
+.ignitiondeck .md_help_link:hover {
+  opacity: .9;
+}
+.ignitiondeck h3 a.md_help_link:hover + div {
+  display: block;
+}
+.ignitiondeck .inside .tip {
+  background-color: rgba(255,255,250, .5);
+  padding: 5px 15px;
+  margin: 5px -15px;
+  font-size: 90%;
+  line-height: 1.2em;
+  display: block;
+}
+.ignitiondeck .columns {
+  display: inline-block;
+  vertical-align: top;
+}
+.ignitiondeck .inside .submit{
+  margin: 0;
+  padding: 10px 0;
+}
+.ignitiondeck .inside select{
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+.ignitiondeck .postbox hr {
+  border-top: 1px solid #C8D3DC;
+  margin-top: 10px;
+}
+.ignitiondeck .postbox .form-input.half {
+  width: 49.5%;
+  display: inline-block;
+}
+.ignitiondeck .postbox .form-input input, .ignitiondeck .postbox .form-input textarea {
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+.ignitiondeck .postbox .form-input input[type="checkbox"], .ignitiondeck .postbox .form-input input[type="radio"], .ignitiondeck .postbox .form-input input[type="submit"] {
+  width: auto;
+}
+.ignitiondeck .columns label {
+  display: block;
+  padding: 0;
+}
+.ignitiondeck .columns .dashboardlayout label {
+  display: inline-block;
+  padding: 0;
+}
+.ignitiondeck .columns #assign-checkbox label, .ignitiondeck .inline label {
+  display: inline-block;
+  padding: 0 0 2px 5px;
+}
+.ignitiondeck .columns #assign-checkbox input, .ignitiondeck .inline input {
+  display: inline-block;
+  margin: 3px 0 0 0;
+  vertical-align: text-top;
+}
+
+/* * Extensions Grid * */
+
+.ignitiondeck_page_idf-extensions .wrap {
+    max-width: 975px
+}
+.ignitiondeck_page_idf-extensions .extension_header {
+     margin: 0;
+     padding: 40px 0 0 30px;
+}
+.ignitiondeck_page_idf-extensions .extension {
+  display: inline-block;
+  width: 200px;
+    vertical-align: top;
+  border-right: 1px solid #eee;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 30px 0 10px 0;
+} 
+.ignitiondeck_page_idf-extensions .extension-title {
+  text-align: center;
+    font-weight: lighter;
+    font-size: 130%;
+    border-top: 1px solid #eee;
+    margin: -20px 0 0 0;
+    padding: 20px 0 0 0;
+} 
+.ignitiondeck_page_idf-extensions .extension-desc {
+  text-align: left;
+    padding: 0 0px;
+    height: 70px;
+    overflow: scroll;
+    line-height: 100%;
+}
+.ignitiondeck_page_idf-extensions .extension-image {
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    width: auto;
+    max-width: 160px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+} 
+.ignitiondeck_page_idf-extensions .extension img {
+     text-align: left;
+     padding: 0 10px;
+     margin: 0 auto;
+     display: block;
+     height: auto;
+     width: auto;
+     max-height: 60px;
+     max-width: 160px;
+} 
+.ignitiondeck_page_idf-extensions .extension-link {
+  text-align: center;
+}
+
+/* * Themes Grid * */
+
+.ignitiondeck_page_idf-themes .wrap {
+     max-width: 1160px;
+     margin: 0;
+}
+.ignitiondeck_page_idf-themes .extension_header {
+     margin: 0;
+     padding: 40px 0 0 30px;
+}
+
+.ignitiondeck_page_idf-themes .extension {
+     display: inline-block;
+     width: 300px;
+     vertical-align: top;
+     padding: 40px 30px;
+     margin: 0;
+} 
+.ignitiondeck_page_idf-themes .extension-title {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 130%;
+    border-top: 1px solid #eee;
+    margin: -20px 0 0 0;
+    padding: 20px 0 0 0;
+}
+.ignitiondeck_page_idf-themes .extension-desc {
+    text-align: left;
+    padding: 0 0px;
+    height: 70px;
+    overflow: scroll;
+    line-height: 100%;
+}
+.ignitiondeck_page_idf-themes .extension-image {
+    margin: 0 auto;
+    display: block;
+    height: 152px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    
+} 
+.ignitiondeck_page_idf-themes .extension img {
+    text-align: left;
+    margin: 0 auto;
+    display: block;
+    height: 152px;
+    width: 300px;
+} 
+.ignitiondeck_page_idf-themes .extension-link {
+    text-align: center;
+}

@@ -1,0 +1,181 @@
+/* ignitiondeck Icon Font */
+ 
+@charset "UTF-8";
+ 
+@font-face {
+  font-family: "ignitiondeck-font-1";
+  src:url("../lib/fonts/ignitiondeck-font-1.eot");
+  src:url("../lib/fonts/ignitiondeck-font-1.eot?#iefix") format("embedded-opentype"),
+    url("../lib/fonts/ignitiondeck-font-1.ttf") format("truetype"),
+    url("../lib/fonts/ignitiondeck-font-1.svg#ignitiondeck-font-1") format("svg"),
+    url("../lib/fonts/ignitiondeck-font-1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Lightbox CSS */
+
+.idc_lightbox {
+	position: relative;
+	background: #FFF;
+	padding: 0;
+	width: auto;
+	max-width: 500px;
+	margin: 20px auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	*/
+}
+
+.idc_lightbox .project_image {
+	width: 100%;
+	background-size: cover;
+	background-position: center 50%;
+	/*
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	*/
+}
+.idc_lightbox .project_image  {
+	margin: 0;
+	text-align: center;
+	padding: 0;
+	display: block;
+}
+.idc_lightbox .project_image .aspect_ratio_maker {
+	padding-top: 56.25%;
+}
+
+.idc_lightbox .lb_wrapper {
+	padding: 30px 0;
+	box-sizing: border-box;
+	width: 90%;
+	margin: 0 auto;
+}
+.ignitiondeck.idc_lightbox form {
+	margin: 0;
+	padding: 0;
+}
+
+.idc_lightbox .form_header {
+	margin-bottom: 18px;
+	font-size: 125%;
+	line-height: 125%;
+}
+
+.idc_lightbox .text {
+	margin-top: 14px;
+	color: #444;
+}
+.ignitiondeck.idc_lightbox form .form-row {
+	float: none;
+}
+.ignitiondeck.idc_lightbox .form-row.total {
+	padding-left: 10px;
+}
+.ignitiondeck.idc_lightbox .form-row label {
+	text-indent: 0;
+	color: #444;
+	font-weight: bold;
+}
+.ignitiondeck.idc_lightbox .form-row.submit {
+	margin-bottom: 0;
+	position: relative;
+}
+.ignitiondeck.idc_lightbox .form-row.submit input[type=submit], #fivehundred .ignitiondeck.idc_lightbox .form-row.submit input[type=submit] {
+	font-weight: bold;
+	font-size: 24px;
+	padding: 15px;
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+	border-radius: 0;
+	border: none;
+	text-align: left;
+	text-indent: 0;
+	position: relative;
+	background: #3CA7C5;
+	box-shadow: none;
+	color: #fff;
+}
+.ignitiondeck.idc_lightbox .form-row.submit input[type=submit]:hover, #fivehundred .ignitiondeck.idc_lightbox .form-row.submit input[type=submit]:hover {
+	color: rgba(255,255,255,.8);
+}
+
+.ignitiondeck.idc_lightbox .form-row.submit:before,
+.ignitiondeck.idc_lightbox .form-row.submit:after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+.ignitiondeck.idc_lightbox .form-row.submit:before {
+	width: 42px;
+    right: 4px; top: 4px; bottom: 4px;
+    border-radius: 0;
+    background: rgba(255,255,255,0);
+    z-index: 99;
+}
+.ignitiondeck.idc_lightbox .form-row.submit:hover:before {
+    background: rgba(255,255,255,0);
+}
+.ignitiondeck.idc_lightbox .form-row.submit:after {
+	content: ">";
+    height: 42px;
+    width: 48px;
+    font-size: 24px;
+    line-height: 24px;
+    right: 10px;
+    top: 0;
+    margin-top: 13px;
+    font-family: "ignitiondeck-font-1" !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    z-index: 100;
+}
+.ignitiondeck.idc_lightbox .form-row.submit:hover:after {
+	text-indent: 6px;
+	color: rgba(255,255,255,1);
+}
+.idc_lightbox .total span {
+	font-size: 18px;
+	line-height: 18px;
+	border: 1px solid #aaa;
+	display: block;
+	padding: 15px;
+	color: #aaa;
+	font-weight: bold;
+	cursor: default;
+}
+.idc_lightbox .form-row.total label {
+	padding-bottom: 0;
+}
+.ignitiondeck.idc_lightbox .form-row.total input {
+	padding: 15px;
+	line-height: normal;
+}
+.ignitiondeck.idc_lightbox form .form-row .idc-dropdown__select {
+	white-space: nowrap;
+}
+.idc_lightbox button.mfp-close {
+}
+.ignitiondeck form .form-row.twothird, .ignitiondeck form .twothird { width: 65.66% !important; }
