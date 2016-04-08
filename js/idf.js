@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
 				var productID = url.substring(urlIndex + 13);
 				//console.log(productID);
 				jQuery(this).data('id', productID);
-				jQuery('.idc_lightbox select[name="level_select"] option').eq(k).data('id', productID);
+				jQuery('.idc_lightbox select[name="level_select"] option[value="'+ (k + 1) +'"]').data('id', productID);
 			}
 		});
 	}
@@ -36,9 +36,6 @@ jQuery(document).ready(function() {
 			}
 		});
 	}
-	else if (idf_platform == 'itexchange') {
-		
-	}
 	else {
 
 	}
@@ -61,6 +58,7 @@ jQuery(document).ready(function() {
 				jQuery(this).attr('href', '.idc_lightbox');
 				jQuery(this).data('href', href);
 			}
+			jQuery(document).trigger('idcfSupportButtonSet', [href]);
 		}
 	});
 	//jQuery('.id-full .btn-container a, .level-binding, .ign-supportnow a').attr('href', '.idc_lightbox');
@@ -114,7 +112,7 @@ jQuery(document).ready(function() {
 		jQuery('.idc_lightbox:visible input[name="total"]').val(price);
 		var levelIndex = jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex');
 		var levelPrice = jQuery('.idc_lightbox:visible select[name="level_select"] option').eq(levelIndex).data('price');
-		if (price < levelPrice) {
+		if (parseFloat(price) < parseFloat(levelPrice)) {
 			jQuery('.idc_lightbox:visible input[name="total"]').val(levelPrice);
 		}
 	});
@@ -136,26 +134,6 @@ jQuery(document).ready(function() {
 		}
 		else if (idf_platform == 'edd') {
 			formAction = idf_checkout_url + '?edd_action=add_to_cart&download_id=' + productID + '&edd_options[price_id]=' + (selLevel - 1);
-		}
-		// If commerce platform is iThemes Exchange
-		else if (idf_platform == 'itexchange') {
-			// Setting URL of the level selected
-			var level = jQuery('.level_select').val();
-			idf_checkout_urls = JSON.parse(idf_checkout_url);
-			//console.log('itexchange idf_checkout_urls: ', idf_checkout_urls, ', level: ', level);
-			formAction = idf_checkout_urls[level]['url'] + '?iditexch-solid=1';
-			// Sending ajax to add the selected level's paired product to exchange cart
-			jQuery.ajax({
-				url: idf_ajaxurl,
-				type: 'POST',
-				data: {action: 'iditexch_add_product_to_cart', product_id: idf_checkout_urls[level]['product']},
-				success: function () {
-					jQuery('.idc_lightbox:visible form').attr('action', formAction);
-					jQuery('.idc_lightbox:visible form').submit();
-				}
-			});
-			// To stop the form from default submission
-			error = true;
 		}
 		else {
 			if (idf_platform == 'idc') {
@@ -191,10 +169,10 @@ function openLB(lbSource, clickLevel) {
 				if (clickLevel != null) {
 					jQuery(document).trigger('idc_lightbox_level_select', clickLevel);
 
-					jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', clickLevel);
-					if (jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex') == -1) {
-						jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', 0);
-					}
+					// jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', clickLevel);
+					// if (jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex') == -1) {
+					// 	jQuery('.idc_lightbox:visible select[name="level_select"]').prop('selectedIndex', 0);
+					// }
 				}
 				else {
 					// clicked a support now button
@@ -216,7 +194,7 @@ function openLB(lbSource, clickLevel) {
 				jQuery('.idc_lightbox:visible input[name="total"]').change(function() {
 					var price = jQuery(this).val();
 					var cleanPrice = price.replace(/[^0-9\.]+/g, '');
-					//console.log(cleanPrice);
+					// console.log('cleanPrice: ', cleanPrice);
 					jQuery(document).trigger('idc_lightbox_price_change', cleanPrice);
 				});
 			},
@@ -244,6 +222,10 @@ function openLBGlobal(lbSource, openCallback, closeCallback) {
 			}
 		}
 	});
+}
+
+function closeLBGlobal() {
+	jQuery.magnificPopup.close();
 }
 
 function adjustHeights(elem) {
