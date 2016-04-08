@@ -58,6 +58,10 @@ Grab code snippets, child theming guides, and API information on our [developer 
 
 == Changelog ==
 
+= 1.2.2 =
+
+* Fixes issue FATAL_ERROR with _idfMenu.php with function_exists error during install and menu display
+
 = 1.2.1 =
 
 * Fix issue preventing some users from being able to upload images on FES
