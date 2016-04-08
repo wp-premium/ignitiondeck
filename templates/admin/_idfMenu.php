@@ -61,7 +61,7 @@
 							</br>
 						</div>
 					</div>
-					<?php } if (!function_exists(is_id_basic()) || !is_id_basic()) { ?>
+					<?php } if (!function_exists('is_id_basic') || !is_id_basic()) { ?>
 					<div class="postbox">
 						<h3 class="hndle"><span><?php _e('Updates', 'idf'); ?></span></h3>
 						<div class="inside">
