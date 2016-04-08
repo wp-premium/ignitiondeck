@@ -20,6 +20,7 @@ function idf_main_menu() {
 	$idf_registered = get_option('idf_registered');
 	$platform = idf_platform();
 	$plugins_path = plugin_dir_path(dirname(__FILE__));
+	$platforms = idf_platforms();
 	if (isset($_POST['commerce_submit'])) {
 		$platform = sanitize_text_field($_POST['commerce_selection']);
 		update_option('idf_commerce_platform', $platform);
@@ -48,7 +49,7 @@ function idf_extension_list() {
 	if (is_ssl()) {
 		$prefix = 'https';
 	}
-	$api = $prefix.'://ignitiondeck.com/id/?action=get_extensions';
+	$api = $prefix.'://www.ignitiondeck.com/id/?action=get_extensions';
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $api);
@@ -73,7 +74,7 @@ function idf_theme_list() {
 	if (is_ssl()) {
 		$prefix = 'https';
 	}
-	$api = $prefix.'://ignitiondeck.com/id/?action=get_themes';
+	$api = $prefix.'://www.ignitiondeck.com/id/?action=get_themes';
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $api);
@@ -97,13 +98,19 @@ function idf_additional_enqueues() {
 }
 
 function idf_admin_enqueues() {
+	if (function_exists('get_plugin_data')) {
+		$idf_data = get_plugin_data(__FILE__);
+	}
 	wp_register_script('idf-admin', plugins_url('/js/idf-admin.js', __FILE__));
+	wp_register_script('idf-admin-media', plugins_url('/js/idf-admin-media.js', __FILE__));
 	wp_register_style('idf-admin', plugins_url('/css/idf-admin.css', __FILE__));
 	wp_register_style('magnific', plugins_url('lib/magnific/magnific.css', __FILE__));
 	wp_register_script('magnific', plugins_url('lib/magnific/magnific.js', __FILE__));
 	wp_enqueue_script('jquery');
+	wp_enqueue_media();
 	wp_enqueue_script('magnific');
 	wp_enqueue_script('idf-admin');
+	wp_enqueue_script('idf-admin-media');
 	wp_enqueue_style('magnific');
 	wp_enqueue_style('idf-admin');
 	$idf_ajaxurl = site_url('/wp-admin/admin-ajax.php');
@@ -116,6 +123,7 @@ function idf_admin_enqueues() {
 		$prefix = 'https';
 	}
 	wp_localize_script('idf-admin', 'launchpad_link', $prefix.'://ignitiondeck.com/id/id-launchpad-checkout/');
+	wp_localize_script('idf-admin', 'idf_version', (isset($idf_data['Version']) ? $idf_data['Version'] : '0.0.0'));
 }
 
 add_action('admin_init', 'filter_idcf_admin');
