@@ -11,6 +11,31 @@ function idf_enable_checkout() {
 	return false;
 }
 
+function idf_has_edd() {
+	$platform = idf_platform();
+	if ($platform == 'edd') {
+		return true;
+	}
+	return false;
+}
+
+function idf_platforms() {
+	$platforms = array();
+	if (!function_exists('is_id_licensed') || !is_id_licensed()) {
+		return $platforms;
+	}
+	if (class_exists('ID_Member')) {
+		$platforms[] = 'idc';
+	}
+	if (class_exists('EDD_API')) {
+		$platforms[] = 'edd';
+	}
+	if (class_exists('WC_Install')) {
+		$platforms[] = 'wc';
+	}
+	return $platforms;
+}
+
 function idf_idcf_delivery() {
 	$plugins_path = plugin_dir_path(dirname(__FILE__));
 	if (!file_exists($plugins_path.'ignitiondeck-crowdfunding')) {
@@ -18,7 +43,17 @@ function idf_idcf_delivery() {
 		if (is_ssl()) {
 			$prefix = 'https';
 		}
-		$idcf = file_get_contents($prefix.'://ignitiondeck.com/idf/idcf_latest.zip');
+		if ( ini_get('allow_url_fopen') ) {
+			$idcf = file_get_contents($prefix.'://www.ignitiondeck.com/idf/idcf_latest.zip');
+		} else {
+			$url = $prefix.'://www.ignitiondeck.com/idf/idcf_latest.zip';
+			$idcf_curl = curl_init();
+			curl_setopt($idcf_curl, CURLOPT_URL, $url);
+			curl_setopt($idcf_curl, CURLOPT_HEADER, 0);
+			curl_setopt($idcf_curl, CURLOPT_RETURNTRANSFER, 1);
+			$idcf = curl_exec($idcf_curl);
+			curl_close($idcf_curl);
+		}
 		if (!empty($idcf)) {
 			$put_idcf = file_put_contents($plugins_path.'idcf_latest.zip', $idcf);
 			$idcf_zip = new ZipArchive;
@@ -40,7 +75,17 @@ function idf_fh_delivery() {
 		if (is_ssl()) {
 			$prefix = 'https';
 		}
-		$fh = file_get_contents($prefix.'://ignitiondeck.com/idf/fh_latest.zip');
+		if ( ini_get('allow_url_fopen') ) {
+			$fh = file_get_contents($prefix.'://www.ignitiondeck.com/idf/fh_latest.zip');
+		} else {
+			$url = $prefix.'://www.ignitiondeck.com/idf/fh_latest.zip';
+			$fh_curl = curl_init();
+			curl_setopt($fh_curl, CURLOPT_URL, $url);
+			curl_setopt($fh_curl, CURLOPT_HEADER, 0);
+			curl_setopt($fh_curl, CURLOPT_RETURNTRANSFER, 1);
+			$fh = curl_exec($fh_curl);
+			curl_close($fh_curl);
+		}
 		if (!empty($fh)) {
 			$put_fh = file_put_contents($themes_path.'fh_latest.zip', $fh);
 			$fh_zip = new ZipArchive;
@@ -157,15 +202,91 @@ function id_validate_url($url_string, $http_secure = false) {
 	}
 }
 
+function idf_handle_video($video) {
+	if (empty($video)) {
+		return;
+	}
+	$array = array('iframe', 'embed', 'object');
+	foreach ($array as $accepted) {
+		if (strpos($video, $accepted)) {
+			return html_entity_decode(stripslashes($video));
+		}
+	}
+	return wp_oembed_get($video);
+}
+
+/**
+ * function for getting client's IP address
+ */
+function idf_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
+
+/**
+ * Function to get the prefix for using before appended query string variables
+ */
+function idf_get_querystring_prefix() {
+	// Get permalink structure for '?' or '&'
+	$prefix = '?';
+	$permalink_structure = get_option('permalink_structure');
+	if (empty($permalink_structure)) {
+		$prefix = '&';
+	}
+	return $prefix;
+}
+
+/**
+ * Function to get the layout of image, depending on it's width and size
+ */
+function idf_image_layout_by_dimensions($width, $height) {
+	if ($width > $height) {
+		$image = "landscape";
+	} else if ($width < $height) {
+		$image = "portrait";
+	} else {
+		$image = "square";
+	}
+	return $image;
+}
+
 function idf_registered() {
 	idf_idcf_delivery();
 	idf_fh_delivery();
 	update_option('idf_registered', 1);
+	if (isset($_POST['Email'])) {
+		$email = esc_attr($_POST['Email']);
+		update_option('id_account', $email);
+	}
 	exit;
 }
 
 add_action('wp_ajax_idf_registered', 'idf_registered');
-add_action('wp_ajax_nopriv_idf_registered', 'idf_registered');
+
+function idf_reset_account() {
+	$options_array = array();
+	array_push($options_array, 'idf_registered', 'id_account');
+	foreach ($options_array as $k=>$v) {
+		delete_option($v);
+	}
+	exit;
+}
+
+add_action('wp_ajax_idf_reset_account', 'idf_reset_account');
 
 function idf_activate_theme() {
 	if (isset($_POST['theme']) && current_user_can('manage_options')) {
@@ -193,13 +314,4 @@ function idf_activate_extension() {
 
 add_action('wp_ajax_idf_activate_extension', 'idf_activate_extension');
 
-/**
- * AJAX function, to set the iT Exchange product in the cart
- */
-function iditexch_add_product_to_cart() {
-	$product_id = $_POST['product_id'];
-	// Adds the product to the cart. second arg is optional and designates the quantity.
-	it_exchange_add_product_to_shopping_cart( $product_id, 1 );
-}
-add_action('wp_ajax_iditexch_add_product_to_cart', 'iditexch_add_product_to_cart');
 ?>

@@ -12,11 +12,11 @@
 			$text = __('Get Theme', 'idf');
 			$installed = false;
 			$active = false;
-			if (in_array($title, $name_array)) {
+			if (in_array($title, $name_array) || in_array('500 '.$title, $name_array)) {
 				$installed = true;
 				$text = __('Activate', 'idf');
 				$link = site_url('wp-admin/themes.php?page=theme-settings');
-				if ($active_name == $title) {
+				if ($active_name == $title || $active_name == '500 '.$title) {
 					$text = __('Configure', 'idf');
 					$active = true;
 				}
