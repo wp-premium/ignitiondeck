@@ -1,183 +1,198 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: IgnitionDeck Framework\n"
-"POT-Creation-Date: 2014-12-04 11:42-0500\n"
-"PO-Revision-Date: 2014-12-04 11:42-0500\n"
+"POT-Creation-Date: 2016-02-03 11:57-0500\n"
+"PO-Revision-Date: 2016-02-03 11:57-0500\n"
 "Last-Translator: Nathan Hangen <nhangen@gmail.com>\n"
 "Language-Team: IgnitionDeck <hello@virtuousgiant.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: ../.\n"
 
 #: .././idf-admin.php:6
-#, fuzzy
 msgid "IgnitionDeck"
-msgstr " IgnitionDeck"
+msgstr "IgnitionDeck"
 
 #: .././idf-admin.php:7
-#, fuzzy
 msgid "Themes"
 msgstr "Themes"
 
 #: .././idf-admin.php:8
-#, fuzzy
 msgid "Extensions"
 msgstr "Extensions"
 
-#: .././templates/admin/_extensionList.php:2
-#, fuzzy
+#: .././templates/admin/_extensionList.php:3
 msgid "IgnitionDeck Extensions"
 msgstr "IgnitionDeck Extensions"
 
-#: .././templates/admin/_extensionList.php:12
+#: .././templates/admin/_extensionList.php:15
 msgid "Get Plugin"
-msgstr ""
+msgstr "Get Plugin"
 
-#: .././templates/admin/_extensionList.php:16
-#: .././templates/admin/_themeList.php:15
-#: .././templates/admin/_themeList.php:29
-#, fuzzy
+#: .././templates/admin/_extensionList.php:19
+#: .././templates/admin/_themeList.php:17
+#: .././templates/admin/_themeList.php:30
 msgid "Activate"
 msgstr "Activate"
 
-#: .././templates/admin/_extensionList.php:20
+#: .././templates/admin/_extensionList.php:23
 msgid "Installed"
-msgstr ""
+msgstr "Installed"
+
+#: .././templates/admin/_extensionList.php:33
+msgid "Docs"
+msgstr "Docs"
 
 #: .././templates/admin/_idfMenu.php:2
-#, fuzzy
 msgid "IgnitionDeck Framework"
 msgstr "IgnitionDeck Framework"
 
 #: .././templates/admin/_idfMenu.php:4
-#, fuzzy
 msgid "Support"
-msgstr "Hulp"
+msgstr "Support"
 
 #: .././templates/admin/_idfMenu.php:5
-#, fuzzy
 msgid "Documentation"
-msgstr "Documentatie"
+msgstr "Documentation"
 
 #: .././templates/admin/_idfMenu.php:12
 msgid "IgnitionDeck Account"
-msgstr ""
+msgstr "IgnitionDeck Account"
 
 #: .././templates/admin/_idfMenu.php:16
 msgid ""
 "Register for an IgnitionDeck account in order to activate crowdfunding "
 "functionality."
 msgstr ""
+"Register for an IgnitionDeck account in order to activate crowdfunding "
+"functionality."
 
 #: .././templates/admin/_idfMenu.php:17
 msgid "Register"
-msgstr ""
+msgstr "Register"
 
 #: .././templates/admin/_idfMenu.php:20
 msgid ""
 "You have registered successfully, and IgnitionDeck has been installed and "
 "activated."
 msgstr ""
+"You have registered successfully, and IgnitionDeck has been installed and "
+"activated."
 
 #: .././templates/admin/_idfMenu.php:21
 msgid "Here's how to get started using IgnitionDeck:"
-msgstr ""
+msgstr "Here’s how to get started using IgnitionDeck:"
 
 #: .././templates/admin/_idfMenu.php:23
+msgid "Activate Theme 500"
+msgstr "Activate Theme 500"
+
+#: .././templates/admin/_idfMenu.php:23
+msgid ", if you wish to use it"
+msgstr ", if you wish to use it"
+
+#: .././templates/admin/_idfMenu.php:24
+msgid "Configure IgnitionDeck Crowdfunding"
+msgstr "Configure IgnitionDeck Crowdfunding"
+
+#: .././templates/admin/_idfMenu.php:25
+msgid "Create your first project"
+msgstr "Create your first project"
+
+#: .././templates/admin/_idfMenu.php:26
+msgid "Upgrade to a premium version of the plugins"
+msgstr "Upgrade to a premium version of the plugins"
+
+#: .././templates/admin/_idfMenu.php:26
+msgid "to activate a payment gateway."
+msgstr "to activate a payment gateway."
+
+#: .././templates/admin/_idfMenu.php:27
 msgid ""
 "Use the commerce selector below to choose an eCommerce platform for use with "
 "IgnitionDeck Crowdfunding (IDCF)"
 msgstr ""
+"Use the commerce selector below to choose an eCommerce platform for use with "
+"IgnitionDeck Crowdfunding (IDCF)"
 
-#: .././templates/admin/_idfMenu.php:24
-#, fuzzy
-msgid "Activate Theme 500"
-msgstr "Activate Theme 500"
+#: .././templates/admin/_idfMenu.php:29
+msgid "Disconnect Account"
+msgstr "Disconnect Account"
 
-#: .././templates/admin/_idfMenu.php:24
-msgid ", if you wish to use it"
-msgstr ""
-
-#: .././templates/admin/_idfMenu.php:25
-#, fuzzy
-msgid "Configure IgnitionDeck"
-msgstr "Configure IgnitionDeck"
-
-#: .././templates/admin/_idfMenu.php:26
-msgid "Create your first project"
-msgstr ""
-
-#: .././templates/admin/_idfMenu.php:35
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:37
 msgid "IDCF Commerce Settings"
 msgstr "IDCF Commerce Settings"
 
-#: .././templates/admin/_idfMenu.php:39
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:40
+msgid "Select a commerce platform for use with IgnitionDeck Crowdfunding"
+msgstr "Select a commerce platform for use with IgnitionDeck Crowdfunding"
+
+#: .././templates/admin/_idfMenu.php:41
+msgid ""
+"Note: Use of IgnitionDeck Commerce and/or WooCommerce requires purchase of "
+"an IgnitionDeck License."
+msgstr ""
+"Note: Use of IgnitionDeck Commerce and/or WooCommerce requires purchase of "
+"an IgnitionDeck License."
+
+#: .././templates/admin/_idfMenu.php:43
 msgid "Commerce Platform"
 msgstr "Commerce Platform"
 
-#: .././templates/admin/_idfMenu.php:42
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:47
 msgid "IgnitionDeck Commerce"
 msgstr "IgnitionDeck Commerce"
 
-#: .././templates/admin/_idfMenu.php:43
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:49
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: .././templates/admin/_idfMenu.php:44
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:51
 msgid "Easy Digital Downloads"
 msgstr "Easy Digital Downloads"
 
-#: .././templates/admin/_idfMenu.php:45
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:53
 msgid "Legacy IgnitionDeck"
 msgstr "Legacy IgnitionDeck"
 
-#: .././templates/admin/_idfMenu.php:50
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:58
 msgid "Save"
-msgstr "Opslaan"
+msgstr "Save"
 
-#: .././templates/admin/_idfMenu.php:57
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:66
 msgid "Updates"
 msgstr "Updates"
 
-#: .././templates/admin/_idfMenu.php:60
+#: .././templates/admin/_idfMenu.php:69
 msgid "Automatically updates IgnitionDeck plugins and themes"
-msgstr ""
+msgstr "Automatically updates IgnitionDeck plugins and themes"
 
-#: .././templates/admin/_idfMenu.php:62
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:71
 msgid "IgnitionDeck Crowdfunding"
 msgstr "IgnitionDeck Crowdfunding"
 
-#: .././templates/admin/_idfMenu.php:63
-#, fuzzy
+#: .././templates/admin/_idfMenu.php:72
 msgid "Update IDCF"
 msgstr "Update IDCF"
 
-#: .././templates/admin/_themeList.php:2
-#, fuzzy
+#: .././templates/admin/_themeList.php:3
 msgid "IgnitionDeck Themes"
 msgstr "IgnitionDeck Themes"
 
-#: .././templates/admin/_themeList.php:10
-#, fuzzy
+#: .././templates/admin/_themeList.php:12
 msgid "Get Theme"
-msgstr "Activate Theme 500"
+msgstr "Get Theme"
 
-#: .././templates/admin/_themeList.php:18
-#, fuzzy
+#: .././templates/admin/_themeList.php:20
 msgid "Configure"
 msgstr "Configure"
+
+#, fuzzy
+#~ msgid "Configure IgnitionDeck"
+#~ msgstr "Configure IgnitionDeck"

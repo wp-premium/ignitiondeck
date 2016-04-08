@@ -1,18 +1,20 @@
 === IgnitionDeck ===
 Contributors: virtuousgiant
 Donate link: http://IgnitionDeck.com
-Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, order, transaction, widget, skin, fundraising
+Tags: crowdfunding, crowd, funding, ecommerce, commerce, marketplace, fundraising, donation
 Requires at least: 3.2
-Tested up to: 4.1.1
-Stable tag: 1.1.8
+Tested up to: 4.4.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A free version of IgnitionDeck, the original crowdfunding plugin for WordPress.
+Crowdfunding and Ecommerce for WordPress
 
 == Description ==
 
-A crowdfunding plugin for WordPress that features the ability to add an unlimited number of crowdfunding, pre-order, or fundraising projects to your WordPress website.
+IgnitionDeck is a crowdfunding and e-commerce platform for WordPress that easily integrates with IgnitionDeck Crowdfunding, IgnitionDeck Commerce, and Woo Commerce.
+
+When used for crodwfunding, IgnitionDeck enables an unlimited number of crowdfunding, pre-order, or fundraising projects on your WordPress website.
 
 IgnitionDeck works with any of the thousands of themes available for Wordpress, offers an incredible amount of free and premium extensions, and is incredibly easy to customize.
 
@@ -22,7 +24,7 @@ This is the free version of IgnitionDeck and includes the following features:
 * Use the WordPress widgets to display the crowdfunding deck (full or mini) for the projects you wish to display
 * Use the IgnitionDeck->Orders->Add Order feature to add orders manually
 
-[Upgrade](http://ignitiondeck.com/id/ignitiondeck-pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) and you'll have access to the complete set of project shortcodes and full commerce functionality.
+[Upgrade to a premium version](http://ignitiondeck.com/id/ignitiondeck-pricing/?utm_source=wprepo&utm_medium=link&utm_campaign=freemium) to unlock WooCommerce compatibilty, and full e-commerce and crowdfunding functionality, including a complete set of shortcodes and customization options.
 
 ###No Theme Required###
 
@@ -55,6 +57,36 @@ Grab code snippets, child theming guides, and API information on our [developer 
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2.1 =
+
+* Fix issue preventing some users from being able to upload images on FES
+* Option to disconnect account on primary admin screen
+* New idf_handle_video for parsing video html/URLs
+* Fix some issues with activation/configuration links on themes page
+* Only show platform choices of installed platforms
+* Begin port for universal access keys
+
+
+= 1.2.0 =
+
+* Add www to curl request URL's to avoid connection issues breaking IDCF and 500 downloads on some hosts
+* Enabling of lightbox in admin menus
+* Update styling of submit buttons
+* Create a general function for adding and implementing the WordPress media uploader on admin side
+* Migrate Font Awesome from plugins and create a general integration for all plugins, extensions, and modules
+* Fix issue causing basic user roles to be removed when using IDCF FES
+* Fix some javascript bugs causing prices to be handled incorrectly
+* Update getting started guide
+
+= 1.1.9 =
+
+* Fix issue preventing users without file_get_contents() capabilities from downloading IDCF and 500
+* Fix issue preventing non-admin logged in users from viewing media galleries
+* Fix issue with undeclared user variable that was breaking javascript chain when trying to manage user roles
+* Update Launchpad registration schema
+* New global functions for adding media via custom button, getting query string prefix, and getting client IP
+* Properly enqueue scripts on login screen for ID Social support
 
 = 1.1.8 =
 

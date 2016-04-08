@@ -28,7 +28,7 @@
 			<div class="extension-image" style="background-image: url(<?php echo $thumbnail; ?>);"></div>
 			<p class="extension-desc"><?php echo $desc; ?></p>
 			<div class="extension-link">
-				<button class="button <?php echo (!$active && !$installed ? 'button-primary' : 'active-installed'); ?>" <?php echo (!empty($link) ? 'onclick="location.href='.$link.'"' : ''); ?> <?php echo ($active ? 'disabled="disabled"' : ''); ?> data-extension="<?php echo $basename; ?>"><?php echo $text; ?></button>
+				<button class="button <?php echo (!$active && !$installed ? 'button-primary' : 'active-installed'); ?>" <?php echo (!empty($link) ? 'onclick="location.href=\''.html_entity_decode($link).'\'"' : ''); ?> <?php echo ($active ? 'disabled="disabled"' : ''); ?> data-extension="<?php echo $basename; ?>"><?php echo $text; ?></button>
 				<?php if (!empty($doclink)) { ?>
 					<button class="button" onclick="window.open('<?php echo $doclink; ?>')"><?php _e('Docs', 'idf'); ?></button>
 				<?php } ?>
